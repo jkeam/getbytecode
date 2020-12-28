@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{{ .Site.Title }}</title>
+  {{ partial "header/stylesheets.html" . }}
+</head>
+<body>
+    {{ partial "header/nav.html" . }}
+    {{ partial "title.html" . }}
+
+    <div id="container">
+      {{ block "main" . }}
+      {{ .Content }}
+      {{ end }}
+    </div>
+
+    {{ .Site.Params.GithubLink | safeHTML }}
+
+    {{ partial "about_modal.html" . }}
+
+    {{ partial "footer/copyright.html" . }}
+
+    {{ partial "footer/scripts.html" . }}
+</body>
+</html>

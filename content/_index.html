@@ -1,0 +1,23 @@
+---
+title: "Home"
+menu:
+  main:
+    name: "Home"
+    url: "/"
+    weight: 1
+---
+<div id="main">
+  <div class="console-container">
+    Ruby Code (v2.6.1)
+    <div class="console">
+      <textarea id="inputTextArea">puts 'hi'</textarea>
+    </div>
+    <a id="disassemble_button" href="#" class="btn" onClick="codebytes.submitCode(); return false;">Disassemble</a>
+  </div>
+  <div class="console-container">
+    Disassembled Code
+    <div class="console">
+      <textarea id="outputTextArea"></textarea>
+    </div>
+  </div>
+</div>
