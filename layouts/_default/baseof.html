@@ -4,7 +4,13 @@
   <title>{{ .Site.Title }}</title>
   {{ partial "header/stylesheets.html" . }}
 </head>
-<body data-controller="application" data-application-initial-language-version-value="Ruby 2.5">
+<body
+  data-controller="application"
+  data-application-initial-language-version-value="Ruby 2.5"
+  data-application-submit-button-submitting-class="disabled"
+  data-application-submit-button-submitting-text-value="Submitting..."
+  data-application-submit-button-original-text-value="Disassemble"
+>
     {{ partial "header/nav.html" . }}
     {{ partial "title.html" . }}
 

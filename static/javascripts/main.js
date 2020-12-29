@@ -7,11 +7,19 @@ window.onReady = function(jQuery) {
         'input',
         'output',
         'dissbutton'
-      ]
+      ];
     }
 
     static get values() {
-      return { initialLanguageVersion: String }
+      return {
+        initialLanguageVersion: String,
+        submitButtonSubmittingText: String,
+        submitButtonOriginalText: String
+      };
+    }
+
+    static get classes() {
+      return ['submitButtonSubmitting'];
     }
 
     initialize() {
@@ -70,8 +78,9 @@ hello_world() -> io:fwrite("hello, world").
       const rawText = this.inputMirror.getValue();
       if (!rawText) return;
 
-      this.dissbuttonTarget.innerHTML = 'Running...';
-      this.dissbuttonTarget.classList.add('disabled');
+      const submittingClass = this.submitButtonSubmittingClass;
+      this.dissbuttonTarget.classList.add(submittingClass);
+      this.dissbuttonTarget.innerHTML = this.submitButtonSubmittingTextValue;
 
       const that = this;
       jQuery.ajax({
@@ -81,8 +90,8 @@ hello_world() -> io:fwrite("hello, world").
         contentType: 'application/json; charset=utf-8',
         data: JSON.stringify({"code":rawText}),
         complete: function(xhr, status) {
-          that.dissbuttonTarget.innerHTML = 'Disassemble';
-          that.dissbuttonTarget.classList.remove('disabled');
+          that.dissbuttonTarget.innerHTML = that.submitButtonOriginalTextValue;
+          that.dissbuttonTarget.classList.remove(submittingClass);
         },
         success: function(code) {
           that.outputMirror.setValue(code.replace(/<br>/g, "\n"));
