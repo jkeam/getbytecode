@@ -80,13 +80,11 @@ hello_world() -> io:fwrite("hello, world").
       const key = this.keyFromLanguageVersion(chosen);
       const doc = this.inputMirror.getDoc();
 
-      if (this.previousKey !== key) {
-        // set new language mode
-        this.inputMirror.setOption('mode', this.languageToMode[key]);
-        // set new valid example text
-        doc.setValue(this.languageToSnippet[key]);
-        this.valid = true;
-      }
+      // set new language mode
+      this.inputMirror.setOption('mode', this.languageToMode[key]);
+      // set new valid example text
+      doc.setValue(this.languageToSnippet[key]);
+      this.valid = true;
       this.previousKey = key;
     }
 
