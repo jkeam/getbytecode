@@ -1,10 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">{{ .Site.Title }}</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarColor02">
+  <div class="collapse navbar-collapse" id="navbar">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <a class="nav-link" href="#" data-toggle="modal" data-target="#about-modal">About</a>
@@ -12,11 +12,21 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="#" data-action="application#choose">Ruby 2.5</a>
+          <a class="dropdown-item" href="#" data-action="application#choose">Ruby 2.7</a>
+          <div class="dropdown-divider" data-action="application#choose"></div>
+          <a class="dropdown-item" href="#" data-action="application#choose">Java 8 - OpenJDK</a>
+          <a class="dropdown-item" href="#" data-action="application#choose">Java 8 - Corretto</a>
+          <a class="dropdown-item" href="#" data-action="application#choose">Java 11 - Corretto</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Separated link</a>
+          <a class="dropdown-item" href="#" data-action="application#choose">Python 2.7</a>
+          <a class="dropdown-item" href="#" data-action="application#choose">Python 3.6</a>
+          <a class="dropdown-item" href="#" data-action="application#choose">Python 3.7</a>
+          <a class="dropdown-item" href="#" data-action="application#choose">Python 3.8</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#" data-action="application#choose">Erlang 17</a>
+          <a class="dropdown-item" href="#" data-action="application#choose">Erlang 18</a>
+          <a class="dropdown-item" href="#" data-action="application#choose">Erlang 19</a>
         </div>
       </li>
     </ul>

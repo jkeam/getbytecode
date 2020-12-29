@@ -8,11 +8,12 @@ menu:
 ---
 <div id="main">
   <div class="console-container">
-    Ruby Code (v2.6.1)
+    <span data-application-target="languageversion">
+    </span>
     <div class="console">
       <textarea id="inputTextArea">puts 'hi'</textarea>
     </div>
-    <a id="disassemble_button" href="#" class="btn" onClick="codebytes.submitCode(); return false;">Disassemble</a>
+    <a id="disassemble_button" href="#" class="btn" onClick="window.codebytes.submitCode(); return false;">Disassemble</a>
   </div>
   <div class="console-container">
     Disassembled Code
