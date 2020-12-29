@@ -27,15 +27,14 @@ window.onReady = function(jQuery) {
         ruby: "puts 'hi'",
         python: "print('hi')",
         java: `public class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
+  public static void main(String[] args) {
+    System.out.println("Hello World!");
+  }
 }`,
         erlang: `-module(hello).
 -export([hello_world/0]).
 
-hello_world() -> io:fwrite("hello, world").
-`
+hello_world() -> io:fwrite("hello, world").`
       };
       this.languageToMode = {
         ruby: 'text/x-ruby',
