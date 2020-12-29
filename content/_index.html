@@ -11,14 +11,14 @@ menu:
     <span data-application-target="languageversion">
     </span>
     <div class="console">
-      <textarea id="inputTextArea">puts 'hi'</textarea>
+      <textarea data-application-target="input"></textarea>
     </div>
-    <a id="disassemble_button" href="#" class="btn" onClick="window.codebytes.submitCode(); return false;">Disassemble</a>
+    <a data-application-target="dissbutton" href="#" class="btn" data-action="application#submitCode">Disassemble</a>
   </div>
   <div class="console-container">
     Disassembled Code
     <div class="console">
-      <textarea id="outputTextArea"></textarea>
+      <textarea data-application-target="output"></textarea>
     </div>
   </div>
 </div>
