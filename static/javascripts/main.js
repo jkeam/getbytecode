@@ -3,7 +3,7 @@ window.onReady = function(jQuery) {
   application.register('application', class extends Stimulus.Controller {
     static get targets() {
       return [
-        'languageversion',
+        'languageVersion',
         'input',
         'output',
         'dissbutton'
@@ -11,7 +11,7 @@ window.onReady = function(jQuery) {
     }
 
     static get values() {
-      return { initiallanguageversion: String }
+      return { initialLanguageVersion: String }
     }
 
     initialize() {
@@ -39,7 +39,7 @@ hello_world() -> io:fwrite("hello, world").
       this.inputMirror = CodeMirror.fromTextArea(this.inputTarget, {lineNumbers:true});
       this.outputMirror = CodeMirror.fromTextArea(this.outputTarget, {lineNumbers:true, readOnly :true});
       this.previousKey = '';
-      this.resetInput(this.initiallanguageversionValue);
+      this.resetInput(this.initialLanguageVersionValue);
     }
 
     choose(e) {
@@ -52,7 +52,7 @@ hello_world() -> io:fwrite("hello, world").
     }
 
     resetInput(chosen) {
-      this.languageversionTarget.innerHTML = chosen;
+      this.languageVersionTarget.innerHTML = chosen;
       const key = this.keyFromLanguageVersion(chosen);
       const doc = this.inputMirror.getDoc();
 
