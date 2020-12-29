@@ -1,0 +1,17 @@
+supported = [
+  "Ruby 2.5",
+  "Ruby 2.7",
+  "",
+  "Java 8 - OpenJDK",
+  "Java 8 - Corretto",
+  "Java 11 - Corretto",
+  "",
+  "Python 2.7",
+  "Python 3.6",
+  "Python 3.7",
+  "Python 3.8",
+  "",
+  "Erlang 17",
+  "Erlang 18",
+  "Erlang 19"
+]

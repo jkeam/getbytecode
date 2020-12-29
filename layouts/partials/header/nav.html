@@ -12,21 +12,13 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="#" data-action="application#choose">Ruby 2.5</a>
-          <a class="dropdown-item" href="#" data-action="application#choose">Ruby 2.7</a>
-          <div class="dropdown-divider" data-action="application#choose"></div>
-          <a class="dropdown-item" href="#" data-action="application#choose">Java 8 - OpenJDK</a>
-          <a class="dropdown-item" href="#" data-action="application#choose">Java 8 - Corretto</a>
-          <a class="dropdown-item" href="#" data-action="application#choose">Java 11 - Corretto</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#" data-action="application#choose">Python 2.7</a>
-          <a class="dropdown-item" href="#" data-action="application#choose">Python 3.6</a>
-          <a class="dropdown-item" href="#" data-action="application#choose">Python 3.7</a>
-          <a class="dropdown-item" href="#" data-action="application#choose">Python 3.8</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#" data-action="application#choose">Erlang 17</a>
-          <a class="dropdown-item" href="#" data-action="application#choose">Erlang 18</a>
-          <a class="dropdown-item" href="#" data-action="application#choose">Erlang 19</a>
+          {{ range .Site.Data.languages.supported }}
+            {{ if eq . "" }}
+              <div class="dropdown-divider" data-action="application#choose"></div>
+            {{ else }}
+              <a class="dropdown-item" href="#" data-action="application#choose">{{ . }}</a>
+            {{ end }}
+          {{ end }}
         </div>
       </li>
     </ul>
