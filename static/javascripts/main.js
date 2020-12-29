@@ -44,10 +44,26 @@ hello_world() -> io:fwrite("hello, world").
         erlang: 'text/x-erlang'
       };
 
+      this.valid = false;
+      this.previousKey = '';
+      this.onInputChangeCallback = this.onInputChange.bind(this);
+    }
+
+    connect() {
       this.inputMirror = CodeMirror.fromTextArea(this.inputTarget, {lineNumbers:true});
       this.outputMirror = CodeMirror.fromTextArea(this.outputTarget, {lineNumbers:true, readOnly :true});
-      this.previousKey = '';
+
       this.resetInput(this.initialLanguageVersionValue);
+      this.inputMirror.on('change', this.onInputChangeCallback);
+    }
+
+    disconnect() {
+      this.inputMirror.off('change', this.onInputChangeCallback);
+    }
+
+    onInputChange(editor) {
+      this.valid = editor.getValue().trim() !== '';
+      this.toggleSubmitButton(this.valid);
     }
 
     choose(e) {
@@ -56,7 +72,7 @@ hello_world() -> io:fwrite("hello, world").
     }
 
     keyFromLanguageVersion(languageVersion){
-      return languageVersion.split(' ')[0].toLowerCase();
+      return (languageVersion || '').split(' ')[0].toLowerCase();
     }
 
     resetInput(chosen) {
@@ -65,21 +81,30 @@ hello_world() -> io:fwrite("hello, world").
       const doc = this.inputMirror.getDoc();
 
       if (this.previousKey !== key) {
-        // set new example text
-        doc.setValue(this.languageToSnippet[key]);
-        // set new language
+        // set new language mode
         this.inputMirror.setOption('mode', this.languageToMode[key]);
+        // set new valid example text
+        doc.setValue(this.languageToSnippet[key]);
+        this.valid = true;
       }
       this.previousKey = key;
     }
 
+    toggleSubmitButton(enabled) {
+      const submittingClass = this.submitButtonSubmittingClass;
+      if (enabled) {
+        this.dissbuttonTarget.classList.remove(submittingClass);
+      } else {
+        this.dissbuttonTarget.classList.add(submittingClass);
+      }
+    }
+
     submitCode(e) {
       e.preventDefault();
-      const rawText = this.inputMirror.getValue();
-      if (!rawText) return;
+      if (!this.valid) return;
 
-      const submittingClass = this.submitButtonSubmittingClass;
-      this.dissbuttonTarget.classList.add(submittingClass);
+      const code = this.inputMirror.getValue();
+      this.toggleSubmitButton(false);
       this.dissbuttonTarget.innerHTML = this.submitButtonSubmittingTextValue;
 
       const that = this;
@@ -88,10 +113,10 @@ hello_world() -> io:fwrite("hello, world").
         url: '/',
         dataType: 'text',
         contentType: 'application/json; charset=utf-8',
-        data: JSON.stringify({"code":rawText}),
+        data: JSON.stringify({ code }),
         complete: function(xhr, status) {
           that.dissbuttonTarget.innerHTML = that.submitButtonOriginalTextValue;
-          that.dissbuttonTarget.classList.remove(submittingClass);
+          that.toggleSubmitButton(true);
         },
         success: function(code) {
           that.outputMirror.setValue(code.replace(/<br>/g, "\n"));
