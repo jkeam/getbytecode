@@ -4,8 +4,8 @@ html {
 
 #banner {
   min-height: 0;
-  padding-left: 2rem;
-  padding-top: 1rem;
+  padding-left: 5rem;
+  padding-top: 2rem;
 }
 
 #container {
@@ -21,11 +21,6 @@ html {
   float: left;
   margin: 0 2%;
   padding-bottom: 2em;
-}
-
-.console-container-full {
-  margin: 0 2%;
-  width: 45%;
 }
 
 .console {
@@ -46,7 +41,7 @@ html {
 }
 
 a.btn{
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 .btn {
@@ -137,6 +132,9 @@ a.btn{
 }
 
 /* CodeMirror */
+.CodeMirror {
+  height: 50vh;
+}
 .CodeMirror .CodeMirror-scroll {
   font-size: 1rem;
 }
