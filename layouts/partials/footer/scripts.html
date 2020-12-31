@@ -20,7 +20,10 @@
 <script src="javascripts/codemirror-5.59.0/mode/erlang/erlang.js"></script>
 
 <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
-<script src="javascripts/main.js"></script>
+
+{{ $script := resources.Get "javascripts/main.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+
 <script type="text/javascript">
   jQuery.noConflict()(function($) {
     window.onReady($);
