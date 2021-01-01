@@ -24,8 +24,9 @@
 {{ $script := resources.Get "javascripts/main.js" | resources.Minify | resources.Fingerprint }}
 <script src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}"></script>
 
-<script type="text/javascript">
+<script type="module">
+  const endpoints = {{ .Site.Data.languages.endpoints }};
   jQuery.noConflict()(function($) {
-    window.onReady($);
+    window.onReady($, endpoints);
   });
 </script>

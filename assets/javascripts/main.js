@@ -1,4 +1,4 @@
-window.onReady = function(jQuery) {
+window.onReady = function(jQuery, endpoints) {
   const application = Stimulus.Application.start();
   application.register('application', class extends Stimulus.Controller {
     static get targets() {
@@ -44,7 +44,7 @@ hello_world() -> io:fwrite("hello, world").`
       };
 
       this.valid = false;
-      this.previousKey = '';
+      this.selectedLanguage = '';
       this.onInputChangeCallback = this.onInputChange.bind(this);
     }
 
@@ -75,6 +75,7 @@ hello_world() -> io:fwrite("hello, world").`
     }
 
     resetInput(chosen) {
+      this.selectedLanguage = chosen;
       this.languageVersionTarget.innerHTML = chosen;
       const key = this.keyFromLanguageVersion(chosen);
       const doc = this.inputMirror.getDoc();
@@ -84,7 +85,6 @@ hello_world() -> io:fwrite("hello, world").`
       // set new valid example text
       doc.setValue(this.languageToSnippet[key]);
       this.valid = true;
-      this.previousKey = key;
     }
 
     toggleSubmitButton(enabled) {
@@ -103,11 +103,13 @@ hello_world() -> io:fwrite("hello, world").`
       const code = this.inputMirror.getValue();
       this.toggleSubmitButton(false);
       this.dissbuttonTarget.innerHTML = this.submitButtonSubmittingTextValue;
+      const selected = endpoints.find(e => e.name === this.selectedLanguage);
+      const url = selected.url || '/';
 
       const that = this;
       jQuery.ajax({
         type: 'POST',
-        url: '/',
+        url,
         dataType: 'text',
         contentType: 'application/json; charset=utf-8',
         data: JSON.stringify({ code }),

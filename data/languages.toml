@@ -17,3 +17,55 @@ supported = [
   "Erlang 18",
   "Erlang 19"
 ]
+
+[[endpoints]]
+  name = "Ruby 2.5"
+  url = ""
+
+[[endpoints]]
+  name = "Ruby 2.7"
+  url = ""
+
+[[endpoints]]
+  name = "Ruby 3.0"
+  url = "https://getbytecodeapi.com/ruby30"
+
+[[endpoints]]
+  name = "Java 8 - OpenJDK"
+  url = ""
+
+[[endpoints]]
+  name = "Java 8 - Corretto"
+  url = ""
+
+[[endpoints]]
+  name = "Java 11 - Corretto"
+  url = ""
+
+[[endpoints]]
+  name = "Python 2.7"
+  url = ""
+
+[[endpoints]]
+  name = "Python 3.6"
+  url = ""
+
+[[endpoints]]
+  name = "Python 3.7"
+  url = ""
+
+[[endpoints]]
+  name = "Python 3.8"
+  url = ""
+
+[[endpoints]]
+  name = "Erlang 17"
+  url = ""
+
+[[endpoints]]
+  name = "Erlang 18"
+  url = ""
+
+[[endpoints]]
+  name = "Erlang 19"
+  url = ""
