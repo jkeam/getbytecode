@@ -13,9 +13,9 @@ supported = [
   "Python 3.7",
   "Python 3.8",
   "",
-  "Erlang 17",
-  "Erlang 18",
-  "Erlang 19"
+  "Erlang 21",
+  "Erlang 22",
+  "Erlang 23"
 ]
 
 [[endpoints]]
@@ -59,13 +59,13 @@ supported = [
   url = ""
 
 [[endpoints]]
-  name = "Erlang 17"
-  url = ""
+  name = "Erlang 21"
+  url = "https://getbytecodeapi.com/erlang21"
 
 [[endpoints]]
-  name = "Erlang 18"
-  url = ""
+  name = "Erlang 22"
+  url = "https://getbytecodeapi.com/erlang22"
 
 [[endpoints]]
-  name = "Erlang 19"
-  url = ""
+  name = "Erlang 23"
+  url = "https://getbytecodeapi.com/erlang23"
