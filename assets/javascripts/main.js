@@ -78,12 +78,12 @@ hello_world() -> io:fwrite("hello, world").`
       this.selectedLanguage = chosen;
       this.languageVersionTarget.innerHTML = chosen;
       const key = this.keyFromLanguageVersion(chosen);
-      const doc = this.inputMirror.getDoc();
 
       // set new language mode
       this.inputMirror.setOption('mode', this.languageToMode[key]);
-      // set new valid example text
-      doc.setValue(this.languageToSnippet[key]);
+      // reset input and output text
+      this.inputMirror.getDoc().setValue(this.languageToSnippet[key]);
+      this.outputMirror.getDoc().setValue('');
       this.valid = true;
     }
 
