@@ -1,6 +1,7 @@
 initial = "Ruby 2.5"
 supported = [
   "Ruby 2.5",
+  "Ruby 2.6",
   "Ruby 2.7",
   "Ruby 3.0",
   "",
@@ -20,11 +21,15 @@ supported = [
 
 [[endpoints]]
   name = "Ruby 2.5"
-  url = ""
+  url = "https://getbytecodeapi.com/ruby25"
+
+[[endpoints]]
+  name = "Ruby 2.6"
+  url = "https://getbytecodeapi.com/ruby26"
 
 [[endpoints]]
   name = "Ruby 2.7"
-  url = ""
+  url = "https://getbytecodeapi.com/ruby27"
 
 [[endpoints]]
   name = "Ruby 3.0"
