@@ -1,13 +1,12 @@
-initial = "Ruby 2.5"
+initial = "Ruby 3.0"
 supported = [
-  "Ruby 2.5",
   "Ruby 2.6",
   "Ruby 2.7",
   "Ruby 3.0",
   "",
   "Java 8 - OpenJDK",
-  "Java 8 - Corretto",
-  "Java 11 - Corretto",
+  "Java 11 - OpenJDK",
+  "Java 15 - OpenJDK",
   "",
   "Python 2.7",
   "Python 3.6",
@@ -18,10 +17,6 @@ supported = [
   "Erlang 18",
   "Erlang 19"
 ]
-
-[[endpoints]]
-  name = "Ruby 2.5"
-  url = "https://getbytecodeapi.com/ruby25"
 
 [[endpoints]]
   name = "Ruby 2.6"
@@ -37,15 +32,15 @@ supported = [
 
 [[endpoints]]
   name = "Java 8 - OpenJDK"
-  url = ""
+  url = "https://getbytecodeapi.com/java8"
 
 [[endpoints]]
-  name = "Java 8 - Corretto"
-  url = ""
+  name = "Java 11 - OpenJDK"
+  url = "https://getbytecodeapi.com/java11"
 
 [[endpoints]]
-  name = "Java 11 - Corretto"
-  url = ""
+  name = "Java 15 - OpenJDK"
+  url = "https://getbytecodeapi.com/java15"
 
 [[endpoints]]
   name = "Python 2.7"
