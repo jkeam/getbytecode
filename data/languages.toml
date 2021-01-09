@@ -8,10 +8,10 @@ supported = [
   "Java 11 - OpenJDK",
   "Java 15 - OpenJDK",
   "",
-  "Python 2.7",
   "Python 3.6",
   "Python 3.7",
   "Python 3.8",
+  "Python 3.9",
   "",
   "Erlang 21",
   "Erlang 22",
@@ -43,20 +43,20 @@ supported = [
   url = "https://getbytecodeapi.com/java15"
 
 [[endpoints]]
-  name = "Python 2.7"
-  url = ""
-
-[[endpoints]]
   name = "Python 3.6"
-  url = ""
+  url = "https://getbytecodeapi.com/python36"
 
 [[endpoints]]
   name = "Python 3.7"
-  url = ""
+  url = "https://getbytecodeapi.com/python37"
 
 [[endpoints]]
   name = "Python 3.8"
-  url = ""
+  url = "https://getbytecodeapi.com/python38"
+
+[[endpoints]]
+  name = "Python 3.9"
+  url = "https://getbytecodeapi.com/python39"
 
 [[endpoints]]
   name = "Erlang 21"
